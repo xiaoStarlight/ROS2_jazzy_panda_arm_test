@@ -1,0 +1,34 @@
+# 时钟同步（必须）
+- ros_topic_name: "/clock"
+  gz_topic_name: "/clock"
+  ros_type_name: "rosgraph_msgs/msg/Clock"
+  gz_type_name: "gz.msgs.Clock"
+  direction: GZ_TO_ROS
+
+# 关节状态反馈（必须）- 修正世界名称为 empty_world
+- ros_topic_name: "/joint_states"
+  gz_topic_name: "/world/empty_world/model/panda_arm/joint_state"
+  ros_type_name: "sensor_msgs/msg/JointState"
+  gz_type_name: "gz.msgs.Model"
+  direction: GZ_TO_ROS
+
+# TF变换（MoveIt2需要）
+- ros_topic_name: "/tf"
+  gz_topic_name: "/model/panda_arm/tf"
+  ros_type_name: "tf2_msgs/msg/TFMessage"
+  gz_type_name: "gz.msgs.Pose_V"
+  direction: GZ_TO_ROS
+
+# 手臂控制命令（MoveIt2 → Gazebo）
+- ros_topic_name: "/arm_controller/joint_trajectory"
+  gz_topic_name: "/model/panda_arm/joint_cmd"
+  ros_type_name: "trajectory_msgs/msg/JointTrajectory"
+  gz_type_name: "gz.msgs.JointTrajectory"
+  direction: ROS_TO_GZ
+
+# 夹爪控制命令（MoveIt2 → Gazebo）
+- ros_topic_name: "/gripper_controller/joint_trajectory"
+  gz_topic_name: "/model/panda_arm/gripper_cmd"
+  ros_type_name: "trajectory_msgs/msg/JointTrajectory"
+  gz_type_name: "gz.msgs.JointTrajectory"
+  direction: ROS_TO_GZ

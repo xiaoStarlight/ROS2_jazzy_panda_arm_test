@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
+
+  <!-- ==================== Gazebo 插件 (Jazzy 版本) ==================== -->
+  <gazebo>
+    <!-- Jazzy 使用 gz_ros2_control-system -->
+    <plugin filename="gz_ros2_control-system" 
+            name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>$(find panda_arm_bringup)/config/ros2_controllers.yaml</parameters>
+    </plugin>
+    
+    <!-- 传感器插件 -->
+    <plugin filename="gz-sim-sensors-system" 
+            name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+  </gazebo>
+
+</robot>

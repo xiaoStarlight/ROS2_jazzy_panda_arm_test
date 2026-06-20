@@ -1,0 +1,23 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: arm_description
+    relative_path: urdf/panda_arm.urdf.xacro
+  srdf:
+    relative_path: config/panda_arm.srdf
+  package_settings:
+    author_name: starlight
+    author_email: xiaostarlight666@gmail.com
+    generated_timestamp: 1781762347
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
