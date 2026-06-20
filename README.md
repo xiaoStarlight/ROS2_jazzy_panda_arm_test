@@ -23,13 +23,8 @@
   - `ros-jazzy-robot-state-publisher`
   - `ros-jazzy-xacro`
 
-## 快速开始
 
-### 1. 克隆项目
+![Gazebo 仿真](./image/gazebo.png)
 
-```bash
-cd ~/ros2_ws/src
-git clone https://github.com/你的用户名/仓库名.git
-cd ..
-colcon build
-source install/setup.bash
+
+![RViz2 可视化](./image/rviz2.png)
