@@ -14,7 +14,7 @@
 
 ## 系统要求
 
-- **操作系统**: Ubuntu 22.04 或更高版本
+- **操作系统**: Ubuntu 24.04 
 - **ROS版本**: ROS2 Jazzy
 - **依赖包**:
   - `ros-jazzy-ros-gz-sim`
