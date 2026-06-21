@@ -86,11 +86,10 @@
       </spot>
     </light>
 
-    <!-- ================= 桌面（再扩大） ================= -->
+    <!-- ================= 桌面 ================= -->
     <model name="table">
       <static>true</static>
       <link name="table_link">
-        <!-- 桌面中心位置：x=0.0, y=0.0, z=桌面厚度的一半 -->
         <pose>0.0 0.0 0.425 0 0 0</pose>
         <collision name="table_collision">
           <geometry>
@@ -122,8 +121,7 @@
       </link>
     </model>
 
-    <!-- ================= 桌腿（放在合适的边缘位置） ================= -->
-    <!-- 桌腿1（左下） -->
+    <!-- ================= 桌腿1（左下） ================= -->
     <model name="leg1">
       <static>true</static>
       <link name="leg1_link">
@@ -149,7 +147,7 @@
       </link>
     </model>
 
-    <!-- 桌腿2（右下） -->
+    <!-- ================= 桌腿2（右下） ================= -->
     <model name="leg2">
       <static>true</static>
       <link name="leg2_link">
@@ -175,7 +173,7 @@
       </link>
     </model>
 
-    <!-- 桌腿3（左上） -->
+    <!-- ================= 桌腿3（左上） ================= -->
     <model name="leg3">
       <static>true</static>
       <link name="leg3_link">
@@ -201,7 +199,7 @@
       </link>
     </model>
 
-    <!-- 桌腿4（右上） -->
+    <!-- ================= 桌腿4（右上） ================= -->
     <model name="leg4">
       <static>true</static>
       <link name="leg4_link">
@@ -227,11 +225,10 @@
       </link>
     </model>
 
-    <!-- ================= RED BOX（抬高，避免穿模） ================= -->
+    <!-- ================= RED BOX ================= -->
     <model name="red_box">
       <static>false</static>
       <link name="red_link">
-        <!-- 桌面表面在z=0.4，方块抬高到z=0.5，底部在z=0.45 -->
         <pose>0.0 0.0 0.50 0 0 0</pose>
         <collision name="red_collision">
           <geometry>
@@ -301,6 +298,43 @@
           <material>
             <ambient>0 0 1 1</ambient>
             <diffuse>0 0 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ================= 长方形物体（旋转90度，放在 red_box 右侧） ================= -->
+    <model name="rect_block">
+      <static>false</static>
+      <link name="rect_link">
+        <!-- 绕Z轴旋转90度（1.5708弧度），长方体沿Y方向延伸 -->
+        <pose>0.10 0.0 0.50 0 0 1.5708</pose>
+        <collision name="rect_collision">
+          <geometry>
+            <box>
+              <!-- 尺寸：长0.16，宽0.05，高0.1 -->
+              <size>0.16 0.05 0.1</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.8</mu>
+                <mu2>0.8</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="rect_visual">
+          <geometry>
+            <box>
+              <size>0.16 0.05 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.7 0.1 1</ambient>
+            <diffuse>0.9 0.7 0.1 1</diffuse>
+            <specular>0.3 0.3 0.1 1</specular>
           </material>
         </visual>
       </link>

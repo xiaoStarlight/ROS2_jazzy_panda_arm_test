@@ -23,6 +23,7 @@
   - `ros-jazzy-robot-state-publisher`
   - `ros-jazzy-xacro`
 
+![Gripper ](./image/gripper.png)
 
 ![Gazebo 仿真](./image/gazebo.png)
 
