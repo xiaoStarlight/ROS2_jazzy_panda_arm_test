@@ -23,9 +23,9 @@
   - `ros-jazzy-robot-state-publisher`
   - `ros-jazzy-xacro`
 
-![Gripper ](./image/gripper.png)
+![Gripper ](./arm_moveit_config/image/gripper.png)
 
-![Gazebo 仿真](./image/gazebo.png)
+![Gazebo 仿真](./arm_moveit_config/image/gazebo.png)
 
 
-![RViz2 可视化](./image/rviz2.png)
+![RViz2 可视化](./arm_moveit_config/image/rviz2.png)
